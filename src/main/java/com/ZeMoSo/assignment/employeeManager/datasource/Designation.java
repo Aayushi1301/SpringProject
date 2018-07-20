@@ -22,4 +22,19 @@ public class Designation {
     private Set<Employee> employee;
 
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
+
+    public void setEmployee(Set<Employee> employee) {
+        this.employee = employee;
+    }
 }
