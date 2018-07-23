@@ -11,8 +11,8 @@ import java.util.Set;
 @Data
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer id;
 
     @Column(name="employee_name")
     @NotNull(message = "Employee name cannot be empty")
@@ -27,20 +27,17 @@ public class Employee {
     @Valid
     @ManyToOne
     @JoinColumn(name = "project_id")
-//    @NotNull(message = "Project is required to save the employee data")
     Project project;
 
     @Valid
     @ManyToOne
     @JoinColumn(name = "did")
-//    @NotNull(message = "Designation is required to save the employee data")
     Designation designation;
 
 
     @Valid
     @ManyToOne
-    @JoinColumn(name = "employee_id")
-//    @NotNull(message = "employee is required to save the manager data")
+    @JoinColumn(name = "report_to")
     Employee report_to;
 
 

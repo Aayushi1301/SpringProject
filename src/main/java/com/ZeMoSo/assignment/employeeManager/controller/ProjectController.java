@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping(ProjectController.BASE_URL)
+import static com.ZeMoSo.assignment.employeeManager.controller.ProjectController.PROJ_URL;
+
+@RestController
+@RequestMapping(ProjectController.BASE_URL+PROJ_URL)
 public class ProjectController {
-    public static final String BASE_URL="/api/v1/projects";
+    public static final String BASE_URL="/api/v1";
+    public static final String PROJ_URL="/projects/";
     private final ProjectService projectService;
 
     public ProjectController(ProjectService projectService) {
@@ -25,7 +28,7 @@ public class ProjectController {
         return projectService.findAllProjects();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}/")
     public Project getProjectById(@PathVariable Long id){
 
         return projectService.findProjectById(id);

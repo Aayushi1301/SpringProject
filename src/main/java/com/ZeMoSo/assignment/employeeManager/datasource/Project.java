@@ -11,8 +11,9 @@ import java.util.Set;
 @Data
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public
+    Integer id;
 
     @Column(name=" project_title")
     @NotNull(message = "project name cannot be empty")

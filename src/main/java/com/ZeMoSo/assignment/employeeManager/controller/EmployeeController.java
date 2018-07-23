@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.ZeMoSo.assignment.employeeManager.controller.EmployeeController.EMP_URL;
+
 @RestController
-@RequestMapping(EmployeeController.BASE_URL)
+@RequestMapping(EmployeeController.BASE_URL+EMP_URL)
 public class EmployeeController {
-    public static final String BASE_URL="/api/v1/employees";
+    public static final String BASE_URL="/api/v1";
+    public static final String EMP_URL="/employees";
     private final EmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {

@@ -11,12 +11,11 @@ import java.util.Set;
 public class Designation {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    public Integer id;
 
     private String designation;
     private Integer rank ;
-
 
     @JsonIgnore
     @OneToMany(mappedBy = "designation", cascade = CascadeType.ALL)
