@@ -1,17 +1,19 @@
 package com.ZeMoSo.assignment.employeeManager.datasource;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
-@Table(name = "project")
+@Data
 public class Project {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public
+    Integer id;
 
     @Column(name=" project_title")
     @NotNull(message = "project name cannot be empty")
