@@ -24,10 +24,9 @@ public class DesignationStrap implements CommandLineRunner {
         mDesignationRepository.save(manager);
 
         Designation hr = new Designation();
-        hr.setDesignation("Ceo");
+        hr.setDesignation("Hr");
         hr.setRank(Rank.HR);
         mDesignationRepository.save(hr);
-
         Designation softwarengineer = new Designation();
         softwarengineer.setDesignation("Softwarengineer");
         softwarengineer.setRank(Rank.SOFTWAREENGINEER);

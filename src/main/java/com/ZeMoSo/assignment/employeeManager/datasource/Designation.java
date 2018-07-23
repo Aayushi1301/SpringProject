@@ -1,12 +1,13 @@
 package com.ZeMoSo.assignment.employeeManager.datasource;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table
+@Data
 public class Designation {
 
     @Id
@@ -22,19 +23,7 @@ public class Designation {
     private Set<Employee> employee;
 
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
 
-    public void setRank(Integer rank) {
-        this.rank = rank;
-    }
 
-    public void setEmployee(Set<Employee> employee) {
-        this.employee = employee;
-    }
 }
