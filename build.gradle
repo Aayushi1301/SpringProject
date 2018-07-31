@@ -1,9 +1,14 @@
 buildscript {
+
 	repositories {
-		mavenCentral()
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+		classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
 	}
 }
 
@@ -12,18 +17,17 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: "com.palantir.docker"
 
 bootJar {
-	baseName = 'gs-accessing-data-mysql'
+	baseName = 'gs-accessing-data-mysql-ayushi'
 	version =  '0.1.0'
-}
-
-repositories {
-	mavenCentral()
 }
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+group = 'springio'
 
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-web")
@@ -37,3 +41,64 @@ dependencies {
 	compile 'org.hibernate:hibernate-core'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+repositories {
+	mavenCentral()
+}
+
+
+
+docker {
+    dependsOn build
+    name "${project.group}/${bootJar.baseName}"
+    files bootJar.archivePath
+    buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
+}
+
+
+
+
+
+//buildscript {
+//
+//    dependencies {
+//
+//        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
+//    }
+//}
+//
+//group = 'springio'
+//
+//apply plugin: 'com.palantir.docker'
+//
+//docker {
+//    dependsOn build
+//    name "${project.group}/${bootJar.baseName}"
+//    files bootJar.archivePath
+//    buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
+//}
+
+
+
+
+
+
+//buildscript {
+//
+//    dependencies {
+//
+//        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
+//    }
+//}
+//
+//group = 'ZeMoSo'
+//
+//
+//apply plugin: 'com.palantir.docker'
+//
+//docker {
+//    dependsOn build
+//    name "${project.group}/${bootJar.baseName}"
+//    files bootJar.archivePath
+//    buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
+//}

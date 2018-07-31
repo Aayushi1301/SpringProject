@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-spring-service
+spec:
+  ports:
+    - name: http
+      port: 4131
+      targetPort: 5050
+  selector:
+    app: my-spring-container
+  type: LoadBalancer

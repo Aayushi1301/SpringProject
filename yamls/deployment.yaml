@@ -1,0 +1,14 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: my-spring-deployment1
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-spring-container
+    spec:
+      containers:
+      - name: my-spring-container
+        image: springio/gs-accessing-data-mysql-ayushi
