@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: my-spring-deployment1
+  name: my-spring-deployment-aayushi
 spec:
   replicas: 2
   template:
@@ -10,5 +10,5 @@ spec:
         app: my-spring-container
     spec:
       containers:
-      - name: my-spring-container
+      - name: compassionate-bose
         image: springio/gs-accessing-data-mysql-ayushi

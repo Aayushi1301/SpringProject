@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: my-spring-service
+  name: my-spring-service-ayushi
 spec:
   ports:
     - name: http
-      port: 4131
-      targetPort: 5050
+      port: 8090
+      targetPort: 8090
   selector:
     app: my-spring-container
   type: LoadBalancer
