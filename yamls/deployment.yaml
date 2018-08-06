@@ -10,5 +10,7 @@ spec:
         app: my-spring-container
     spec:
       containers:
-      - name: compassionate-bose
-        image: springio/gs-accessing-data-mysql-ayushi
+      - name: my-spring-container
+        image: aayushi1301/springassignment
+        imagePullPolicy: "Always"
+      

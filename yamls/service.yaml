@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: my-spring-service-ayushi
+  name: my-spring-service-aayushi
 spec:
   ports:
     - name: http
