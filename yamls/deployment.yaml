@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: my-spring-deployment-aayushi
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-spring-container
+    spec:
+      containers:
+      - name: my-spring-container
+        image: aayushi1301/springassignment
+        imagePullPolicy: "Always"
+      
